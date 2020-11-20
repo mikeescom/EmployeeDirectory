@@ -16,14 +16,8 @@ import android.widget.Toast;
 import com.mikeescom.employeedirectory.R;
 import com.mikeescom.employeedirectory.Utils;
 import com.mikeescom.employeedirectory.model.dao.Employee;
-import com.mikeescom.employeedirectory.model.dao.Employees;
 import com.mikeescom.employeedirectory.model.network.CustomResponse;
 import com.mikeescom.employeedirectory.viewmodel.MainViewModel;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import retrofit2.Response;
 
 public class ListFragment extends Fragment {
 

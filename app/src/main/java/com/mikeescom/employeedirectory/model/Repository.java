@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import java.net.MalformedURLException;
 import java.net.UnknownHostException;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,12 +29,14 @@ import static com.mikeescom.employeedirectory.Utils.ERROR_UNKNOWN_HOST;
 
 public class Repository {
     private static final String TAG = Repository.class.getSimpleName();
+    private static final String BASE_URL = "https://s3.amazonaws.com/";
     private final EmployeeService employeeService;
     private final MutableLiveData<CustomResponse> employeesMutableLiveData = new MutableLiveData<>();
 
+    @Inject
     public Repository() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://s3.amazonaws.com/")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         employeeService = retrofit.create(EmployeeService.class);
