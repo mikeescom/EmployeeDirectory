@@ -1,11 +1,17 @@
 package com.mikeescom.employeedirectory.model.network;
 
-import com.mikeescom.employeedirectory.model.dao.Response;
+import com.mikeescom.employeedirectory.model.dao.Employees;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface EmployeeService {
     @GET("sq-mobile-interview/employees.json")
-    Call<Response> getEmployees();
+    Call<Employees> getEmployees();
+
+    @GET("sq-mobile-interview/employees_malformed.json")
+    Call<Employees> getEmployeesMalformed();
+
+    @GET("sq-mobile-interview/employees_empty.json")
+    Call<Employees> getEmployeesEmpty();
 }
