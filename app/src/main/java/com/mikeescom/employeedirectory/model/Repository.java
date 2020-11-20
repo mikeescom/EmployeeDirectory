@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.net.MalformedURLException;
 import java.net.UnknownHostException;
-import java.net.UnknownServiceException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,8 +39,8 @@ public class Repository {
     }
 
     public void callEmployeeService() {
-        //employeeService.getEmployees().enqueue(new Callback<Employees>() {
-        employeeService.getEmployeesEmpty().enqueue(new Callback<Employees>() {
+        employeeService.getEmployees().enqueue(new Callback<Employees>() {
+        //employeeService.getEmployeesEmpty().enqueue(new Callback<Employees>() {
         //employeeService.getEmployeesMalformed().enqueue(new Callback<Employees>() {
             @Override
             public void onResponse(@NotNull Call<Employees> call, @NotNull Response<Employees> response) {

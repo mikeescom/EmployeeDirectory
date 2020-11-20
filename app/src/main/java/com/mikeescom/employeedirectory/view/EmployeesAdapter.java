@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mikeescom.employeedirectory.R;
 import com.mikeescom.employeedirectory.model.dao.Employee;
 
@@ -32,6 +33,8 @@ public class EmployeesAdapter extends RecyclerView.Adapter<EmployeesAdapter.View
         Employee employee = results[position];
         Glide.with(context)
                 .load(employee.getPhoto_url_large())
+                .onlyRetrieveFromCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(context.getDrawable(R.drawable.photo_placeholder))
                 .into(holder.photo);
         holder.name.setText(employee.getFull_name());
