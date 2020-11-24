@@ -1,6 +1,7 @@
 package com.mikeescom.employeedirectory.view;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,8 +38,8 @@ public class EmployeesAdapter extends RecyclerView.Adapter<EmployeesAdapter.View
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .placeholder(context.getDrawable(R.drawable.photo_placeholder))
                 .into(holder.photo);
-        holder.name.setText(employee.getFull_name());
-        holder.team.setText(employee.getTeam());
+        holder.name.setText(TextUtils.isEmpty(employee.getFull_name()) ? "Name not found" : employee.getFull_name());
+        holder.team.setText(TextUtils.isEmpty(employee.getTeam()) ? "Team not found" : employee.getTeam());
     }
 
     @Override
