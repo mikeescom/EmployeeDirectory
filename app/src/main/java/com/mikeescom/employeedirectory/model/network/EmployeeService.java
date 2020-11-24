@@ -10,7 +10,7 @@ public interface EmployeeService {
     Call<Employees> getEmployees();
 
     @GET("sq-mobile-interview/employees_malformed.json")
-    Call<Employees> getEmployeesMalformed();
+    Call<Employees> getEmployeesJsonMalformed();
 
     @GET("sq-mobile-interview/employees_empty.json")
     Call<Employees> getEmployeesEmpty();

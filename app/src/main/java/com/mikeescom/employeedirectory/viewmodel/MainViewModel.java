@@ -11,7 +11,6 @@ public class MainViewModel extends ViewModel {
     private final Repository repository;
 
     public MainViewModel() {
-        super();
         repository = DaggerComponent.create().buildRepository();
     }
 
